@@ -62,12 +62,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\Entities\Cat.cs" />
+    <Compile Include="Model\PicSize.cs" />
+    <Compile Include="Model\Entities\Wolf.cs" />
+    <Compile Include="Model\Move.cs" />
+    <Compile Include="Resources\Images.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Entity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -92,6 +98,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Bear.png" />
+    <Resource Include="Resources\Bird.png" />
+    <Resource Include="Resources\Bull.png" />
+    <Resource Include="Resources\Bulldog.png" />
+    <Resource Include="Resources\Cat.png" />
+    <Resource Include="Resources\Chicken.png" />
+    <Resource Include="Resources\Duck.png" />
+    <Resource Include="Resources\Owl.png" />
+    <Resource Include="Resources\Wolf.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
