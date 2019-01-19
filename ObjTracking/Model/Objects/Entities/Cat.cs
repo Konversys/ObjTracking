@@ -7,16 +7,13 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media.Imaging;
 
-namespace ObjTracking.Model.Entities
+namespace ObjTracking.Objects.Model.Entities
 {
-    class Cat : Entity
+    class Cat : GroundEntity
     {
-        public Cat(uint width, uint height) : base(width, height)
+        public Cat(int width, int height, bool isMoveRight = true) : base(width, height, isMoveRight)
         {
         }
-
         protected override BitmapImage Image => Images.Cat;
-
-        protected override PicSize Size => PicSize.Medium;
     }
 }

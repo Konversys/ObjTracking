@@ -7,16 +7,14 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media.Imaging;
 
-namespace ObjTracking.Model.Entities
+namespace ObjTracking.Objects.Model.Entities
 {
-    class Wolf : Entity
+    class Wolf : GroundEntity
     {
-        public Wolf(uint width, uint height) : base(width, height)
+        public Wolf(int width, int height, bool isMoveRight = true) : base(width, height, isMoveRight)
         {
         }
 
         protected override BitmapImage Image => Images.Wolf;
-
-        protected override PicSize Size => PicSize.Medium;
     }
 }

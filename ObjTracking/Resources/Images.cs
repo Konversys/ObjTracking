@@ -18,6 +18,7 @@ namespace ObjTracking.R
         public static readonly BitmapImage Duck = new BitmapImage(new Uri(DefaultPath("Duck"), UriKind.Absolute));
         public static readonly BitmapImage Owl = new BitmapImage(new Uri(DefaultPath("Owl"), UriKind.Absolute));
         public static readonly BitmapImage Wolf = new BitmapImage(new Uri(DefaultPath("Wolf"), UriKind.Absolute));
+        public static readonly BitmapImage Forest = new BitmapImage(new Uri(DefaultPath("Forest"), UriKind.Absolute));
 
         static string DefaultPath(string name)
         {

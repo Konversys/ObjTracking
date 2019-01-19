@@ -62,10 +62,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Model\Entities\Cat.cs" />
+    <Compile Include="Model\Objects\Entities\Bear.cs" />
+    <Compile Include="Model\Objects\Entities\Bird.cs" />
+    <Compile Include="Model\Objects\Entities\Bull.cs" />
+    <Compile Include="Model\Objects\Entities\Bulldog.cs" />
+    <Compile Include="Model\Objects\Entities\Cat.cs" />
+    <Compile Include="Model\Objects\Entities\Chicken.cs" />
+    <Compile Include="Model\Objects\Entities\Duck.cs" />
+    <Compile Include="Model\Objects\FlyEntity.cs" />
+    <Compile Include="Model\Objects\GroundEntity.cs" />
+    <Compile Include="Model\Objects\Entities\Owl.cs" />
     <Compile Include="Model\PicSize.cs" />
-    <Compile Include="Model\Entities\Wolf.cs" />
-    <Compile Include="Model\Move.cs" />
+    <Compile Include="Model\Objects\Entities\Wolf.cs" />
     <Compile Include="Resources\Images.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -73,7 +81,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Entity.cs" />
+    <Compile Include="Model\Objects\Entity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -99,7 +107,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Forest.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Bear.png" />
     <Resource Include="Resources\Bird.png" />
