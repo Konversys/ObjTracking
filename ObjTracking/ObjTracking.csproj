@@ -54,6 +54,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\Controller.cs" />
+    <Compile Include="Tracker\Comparator.cs" />
+    <Compile Include="Tracker\Converter.cs" />
+    <Compile Include="Tracker\Detector.cs" />
+    <Compile Include="Tracker\ObjectPatterns.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -32,8 +32,8 @@ namespace ObjTracking.Objects.Model
                     {
                         if (Point.Y > (1.5 * Height / 3))
                             Offset(0, -25);
-                        else if (Point.Y < 0)
-                            Offset(0, random.Next(25));
+                        else if (Point.Y < (int)Size / 2)
+                            Offset(0, 25);
                         else
                             Offset(0, random.Next(-25, 25));
                     }
@@ -59,8 +59,8 @@ namespace ObjTracking.Objects.Model
                     {
                         if (Point.Y < (1.5 * Height / 3))
                             Offset(0, -25);
-                        else if (Point.Y < 0)
-                            Offset(0, random.Next(25));
+                        else if (Point.Y < (int)Size/2)
+                            Offset(0, 25);
                         else
                             Offset(0, random.Next(-25, 25));
                     }

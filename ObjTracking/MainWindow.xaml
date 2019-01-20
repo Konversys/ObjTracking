@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1000">
     <Grid>
-        <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="565" VerticalAlignment="Top" Width="990" />
+        <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="565" VerticalAlignment="Top" Width="990"/>
+        <Canvas x:Name="dataField" HorizontalAlignment="Left" Height="565" VerticalAlignment="Top" Width="990"/>
     </Grid>
 </Window>
