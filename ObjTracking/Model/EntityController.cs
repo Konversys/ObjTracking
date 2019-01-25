@@ -11,12 +11,12 @@ using System.Windows.Media;
 
 namespace ObjTracking.Model
 {
-    class Controller
+    class EntityController
     {
         List<Entity> entities;
         Canvas canvas;
 
-        public Controller(Canvas canvas)
+        public EntityController(Canvas canvas)
         {
             this.canvas = canvas;
             entities = new List<Entity>();
@@ -42,12 +42,12 @@ namespace ObjTracking.Model
             entities.Add(new Bird(w, h));
         }
 
-        public void UpdateEntities(ref Canvas canvas)
+        public void UpdateEntities(ref Canvas canvas, int shift = 3)
         {
             canvas.Children.Clear();
             foreach (var item in entities)
             {
-                item.ShiftVector(3);
+                item.ShiftVector(shift);
                 canvas.Children.Add(item.GetCanvas());
             }
         }

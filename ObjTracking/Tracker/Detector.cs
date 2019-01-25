@@ -16,20 +16,16 @@ namespace ObjTracking.Tracker
         static public void Detect(Canvas canvas, ref Canvas field)
         {
             field.Children.Clear();
-
-            var watch = System.Diagnostics.Stopwatch.StartNew();
             objects = new List<BitmapImage>();
             foreach (var item in canvas.Children.Cast<Canvas>())
             {
                 objects.Add((BitmapImage)((ImageBrush)item.Background).ImageSource);
-                string f = Comparator.TryDetect(objects.Last());
-                if (f != null)
-                {
-                    field.Children.Add(AddFrame((int)item.Margin.Left, (int)item.Margin.Top, f, (int)item.Height));
-                }
+       //         string f = Comparator.TryDetect(objects.Last());
+         //       if (f != null)
+         //       {
+         //           field.Children.Add(AddFrame((int)item.Margin.Left, (int)item.Margin.Top, f, (int)item.Height));
+         //       }
             }
-            watch.Stop();
-            var elapsedMs = watch.ElapsedMilliseconds;
         }
         static Canvas AddFrame(int x, int y, string title, int size, int borderOpacity = 1, int borderThickness = 1)
         {

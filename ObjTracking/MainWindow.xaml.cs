@@ -1,23 +1,11 @@
-﻿using ObjTracking.Model;
-using ObjTracking.Objects.Model;
-using ObjTracking.Objects.Model.Entities;
+﻿using BeamTracker;
+using BeamTracker.FrameBase;
+using BeamTracker.ObjectsPack;
+using ObjTracking.Model;
 using ObjTracking.R;
-using ObjTracking.Tracker;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace ObjTracking
@@ -27,21 +15,37 @@ namespace ObjTracking
     /// </summary>
     public partial class MainWindow : Window
     {
-        Controller controller;
+        EntityController entityController;
+        Frame frame;
+        EntityTemplates objects;
+        TrackerController trackerController;
+
         public MainWindow()
         {
             InitializeComponent();
             canvas.Background = new ImageBrush() { ImageSource = Images.Forest };
-            controller = new Controller(canvas);
+            entityController = new EntityController(canvas);
             DispatcherTimer timer = new DispatcherTimer();
             timer.Tick += new EventHandler(TimerAction);
             timer.Interval = new TimeSpan(0, 0, 0, 0, 20);
             timer.Start();
+
+            trackerController = new TrackerController();
+
+            objects = new EntityTemplates();
+            objects.Add("Медведь", Images.Bear);
+            objects.Add("Сова", Images.Owl);
+            objects.Add("Кот", Images.Cat);
+
+            frame = new Frame(new Foundation(Brushes.Blue, 0.2),
+                new Edge(Brushes.Red, new Thickness(1), 1),
+                new Inscription(14, Brushes.White, new Thickness(5, 3, 0, 0)));
+            
         }
         public void TimerAction(object sender, EventArgs e)
         {
-            controller.UpdateEntities(ref canvas);
-            Detector.Detect(canvas, ref dataField);
+            entityController.UpdateEntities(ref canvas, 5);
+            trackerController.DetectField(canvas, ref dataField, objects, frame, true, true, true);
         }
     }
 }

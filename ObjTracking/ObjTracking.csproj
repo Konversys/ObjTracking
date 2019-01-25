@@ -54,11 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\Controller.cs" />
-    <Compile Include="Tracker\Comparator.cs" />
-    <Compile Include="Tracker\Converter.cs" />
-    <Compile Include="Tracker\Detector.cs" />
-    <Compile Include="Tracker\ObjectPatterns.cs" />
+    <Compile Include="Model\EntityController.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -125,6 +121,12 @@
     <Resource Include="Resources\Duck.png" />
     <Resource Include="Resources\Owl.png" />
     <Resource Include="Resources\Wolf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BeamTracker\BeamTracker.csproj">
+      <Project>{94d4f5f7-7e10-46b7-a243-32c487a4051f}</Project>
+      <Name>BeamTracker</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
