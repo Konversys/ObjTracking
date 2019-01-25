@@ -1,11 +1,6 @@
-﻿using BeamTracker.FrameBase;
-using BeamTracker.Objects;
-using BeamTracker.ObjectsPack;
-using System.Collections.Generic;
-using System.Windows;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows.Controls;
-using System.Windows.Media.Imaging;
-using Frame = BeamTracker.FrameBase.Frame;
 
 namespace BeamTracker
 {
@@ -13,9 +8,11 @@ namespace BeamTracker
     {
         public void DetectField(Canvas source, ref Canvas field, EntityTemplates objects, Frame frame, bool isEdge, bool isTitle, bool isBg)
         {
+            var sw = new Stopwatch();
+            sw.Start();
             Detector detector = new Detector(source);
             detector.Search();
-            List<Entity> images = detector.GetImages();
+            List<IEntity> images = detector.GetImages();
 
             Comparator comparator = new Comparator();
 
@@ -29,6 +26,8 @@ namespace BeamTracker
                     field.Children.Add(frame.GetFrame(item.Thickness, isBg, isEdge, isTitle, item.Size));
                 }
             }
+            sw.Stop();
+            long f = sw.ElapsedMilliseconds;
         }
     }
 }

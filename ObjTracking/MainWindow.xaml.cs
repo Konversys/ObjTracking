@@ -1,6 +1,4 @@
 ﻿using BeamTracker;
-using BeamTracker.FrameBase;
-using BeamTracker.ObjectsPack;
 using ObjTracking.Model;
 using ObjTracking.R;
 using System;
@@ -31,12 +29,13 @@ namespace ObjTracking
             timer.Start();
 
             trackerController = new TrackerController();
-
+            // Добавление объектов в список шаблонов
             objects = new EntityTemplates();
-            objects.Add("Медведь", Images.Bear);
+            objects.Add("Утка", Images.Duck);
             objects.Add("Сова", Images.Owl);
-            objects.Add("Кот", Images.Cat);
-
+            objects.Add("Курица", Images.Chicken);
+            objects.Add("Птица", Images.Bird);
+            // Создание рамки
             frame = new Frame(new Foundation(Brushes.Blue, 0.2),
                 new Edge(Brushes.Red, new Thickness(1), 1),
                 new Inscription(14, Brushes.White, new Thickness(5, 3, 0, 0)));

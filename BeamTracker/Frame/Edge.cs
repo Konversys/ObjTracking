@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace BeamTracker.FrameBase
+namespace BeamTracker
 {
     /// <summary>
     /// Обрамление

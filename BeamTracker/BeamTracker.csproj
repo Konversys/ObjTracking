@@ -49,7 +49,7 @@
     <Compile Include="TrackerController.cs" />
     <Compile Include="Convert\Converter.cs" />
     <Compile Include="Convert\Detector.cs" />
-    <Compile Include="Convert\IDetector.cs" />
+    <Compile Include="Objects\IEntity.cs" />
     <Compile Include="Frame\Edge.cs" />
     <Compile Include="Frame\Foundation.cs" />
     <Compile Include="Frame\Frame.cs" />

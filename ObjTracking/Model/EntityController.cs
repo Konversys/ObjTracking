@@ -25,6 +25,8 @@ namespace ObjTracking.Model
             entities.Add(new Bird(w, h));
             entities.Add(new Wolf(w, h));
             entities.Add(new Bird(w, h));
+            entities.Add(new Duck(w, h));
+            entities.Add(new Duck(w, h));
             entities.Add(new Bird(w, h));
             entities.Add(new Bull(w, h));
             entities.Add(new Owl(w, h));

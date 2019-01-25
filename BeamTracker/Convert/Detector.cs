@@ -1,10 +1,5 @@
-﻿using BeamTracker.Objects;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -15,10 +10,10 @@ namespace BeamTracker
     /// Приведение канваса к списку.
     /// Адаптер
     /// </summary>
-    class Detector : IDetector
+    class Detector
     {
         Canvas canvas;
-        List<Entity> objects;
+        List<IEntity> objects;
         /// <summary>
         /// 
         /// </summary>
@@ -26,17 +21,17 @@ namespace BeamTracker
         public Detector(Canvas canvas)
         {
             this.canvas = canvas;
-            objects = new List<Entity>();
+            objects = new List<IEntity>();
         }
         /// <summary>
         /// Поиск объектов 
         /// </summary>
-        public List<Entity> Search()
+        public List<IEntity> Search()
         {
             objects.Clear();
             foreach (var item in canvas.Children.Cast<Canvas>())
             {
-                objects.Add(new Entity((BitmapImage)((ImageBrush)item.Background).ImageSource, item.Height ,item.Margin));
+                objects.Add(new Entity(item));
             }
             return objects;
         }
@@ -44,7 +39,7 @@ namespace BeamTracker
         /// Получить список объектов
         /// </summary>
         /// <returns></returns>
-        public List<Entity> GetImages()
+        public List<IEntity> GetImages()
         {
             return objects;
         }
